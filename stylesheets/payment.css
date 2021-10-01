@@ -26,19 +26,22 @@ label span {
     text-align: right;
 }
 
-input, textarea {
+input,
+textarea {
     font: 1em sans-serif;
     width: 250px;
     box-sizing: border-box;
     border: 1px solid #999;
 }
 
-input[type=checkbox], input[type=radio] {
+input[type=checkbox],
+input[type=radio] {
     width: auto;
     border: none;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     border-color: #000;
 }
 
@@ -60,11 +63,11 @@ button {
 }
 
 label {
-  position: relative;
+    position: relative;
 }
 
 label em {
-  position: absolute;
-  right: 5px;
-  top: 20px;
+    position: absolute;
+    right: 5px;
+    top: 20px;
 }

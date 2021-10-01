@@ -1,4 +1,4 @@
-(function(window){
+(function (window) {
     'use strict';
     var FORM_SELECTOR = '[data-coffee-order="form"]';
     var CHECKLIST_SELECTOR = '[data-coffee-order="checklist"]';
@@ -13,7 +13,7 @@
     checkList.addClickHandler(truck.deliverOrder.bind(truck));
     var formHandler = new FormHandler(FORM_SELECTOR);
 
-    formHandler.addSubmitHandler(function(data){
+    formHandler.addSubmitHandler(function (data) {
         truck.createOrder.call(truck, data);
         checkList.addRow.call(checkList, data);
     });

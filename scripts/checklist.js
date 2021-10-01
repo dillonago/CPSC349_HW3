@@ -8,14 +8,16 @@
         constructor(selector) {
             console.log('In CheckList constructor...');
 
-            if (!selector) { throw new Error('No selector provided'); }
+            if (!selector) {
+                throw new Error('No selector provided');
+            }
 
             this.$element = $(selector);
             if (this.$element.length === 0) {
                 throw new Error('Could not find element with selector: ' + selector);
             }
         }
-        addRow(coffeeOrder){
+        addRow(coffeeOrder) {
             // Remove any existing rows that match the email address
             this.removeRow(coffeeOrder.emailAddress);
             // Create a new instance of a row, using the coffee order info
@@ -24,18 +26,18 @@
             this.$element.append(rowElement.$element);
         }
 
-        removeRow(email){
+        removeRow(email) {
             this.$element
-            .find('[value="' + email + '"]')
-            .closest('[data-coffee-order="checkbox"]')
-            .remove();
+                .find('[value="' + email + '"]')
+                .closest('[data-coffee-order="checkbox"]')
+                .remove();
         }
 
         addClickHandler(fn) {
             this.$element.on('click', 'input', function (event) {
-            var email = event.target.value;
-            this.removeRow(email);
-            fn(email);
+                var email = event.target.value;
+                this.removeRow(email);
+                fn(email);
             }.bind(this));
         }
     }
@@ -84,7 +86,7 @@
     }
 
 
-   
+
     App.CheckList = CheckList;
     window.App = App;
-  })(window);
+})(window);

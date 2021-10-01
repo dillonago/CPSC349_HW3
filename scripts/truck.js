@@ -14,7 +14,7 @@
             this.db.add(order.emailAddress, order);
         }
 
-        deliverOrder(customerId){
+        deliverOrder(customerId) {
             console.log('Delivering order for ' + customerId);
             this.db.remove(customerId);
         }
@@ -24,12 +24,11 @@
             this.db.remove(order.emailAddress, order);
         }
 
-        printOrders(){
+        printOrders() {
             var customerIdArray = Object.keys(this.db.getAll());
-            customerIdArray.forEach(function(id){
+            customerIdArray.forEach(function (id) {
                 console.log(this.db.get(id));
-            }.bind(this)
-            );
+            }.bind(this));
         }
 
         static runTests(truck) {

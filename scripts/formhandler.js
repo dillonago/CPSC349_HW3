@@ -7,7 +7,9 @@
         constructor(selector) {
             console.log('In FormHandler constructor...');
 
-            if (!selector) { throw new Error('No selector provided'); }
+            if (!selector) {
+                throw new Error('No selector provided');
+            }
 
             this.$formElement = $(selector);
             if (this.$formElement.length === 0) {
@@ -22,7 +24,7 @@
 
                 // var data = $(this).serializeArray();
                 var data = {};
-                $(this).serializeArray().forEach(function (item) { 
+                $(this).serializeArray().forEach(function (item) {
                     data[item.name] = item.value;
                     console.log(item.name + ' is ' + item.value);
                 });
@@ -34,7 +36,7 @@
         }
     }
 
-   
+
     App.FormHandler = FormHandler;
     window.App = App;
-  })(window);
+})(window);
