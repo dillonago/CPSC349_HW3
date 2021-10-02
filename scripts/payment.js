@@ -5,16 +5,16 @@
     var payFormHandler = new FormHandler(FORM_SELECTOR);
 
     payFormHandler.addSubmitHandler(function (data) {
-        var str = "Thank you for your payment, " + data.title + " " + data.username;
+        var str = "Thank you for your payment, " + data.title + " " + data.username + ". Press close to be redirected.";
         $('#thanks-modal-body').html(str);
         $('#thanks-modal').modal('show');
         $('#myModal').on('hidden.bs.modal', function () {
-            window.location.pathname=('/');
+            window.location.pathname = ('/');
             console.log(window.location);
-          })
-        
+        })
+
         console.log("Submitted");
-        
+
     });
     console.log(payFormHandler);
 })(window);
